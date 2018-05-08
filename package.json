@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "start": "nuxt build -c ./client/nuxt.config.js && NODE_ENV=production node server/server.js"
+  }
+}
