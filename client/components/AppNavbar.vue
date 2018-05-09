@@ -2,6 +2,7 @@
   <div class="nav">
     <div class="nav__content">
       <div class="nav__logo">KiteThere</div>
+      <div class="nav__link">home</div>
       <div class="nav__link">about</div>
       <div class="nav__link">map</div>
     </div>
@@ -19,7 +20,7 @@
 .nav__content {
   grid-column: 2;
   display: grid;
-  grid-template-columns: 1fr 100px 100px;
+  grid-template-columns: 1fr 100px 100px 100px;
   align-items: center;
 }
 
