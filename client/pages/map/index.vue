@@ -32,10 +32,12 @@ export default {
   grid-column: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .search__map {
   height: calc(100vh - 80px);
   width: 100%;
 }
+
 </style>

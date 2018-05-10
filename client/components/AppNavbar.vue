@@ -2,9 +2,13 @@
   <div class="nav">
     <div class="nav__content">
       <div class="nav__logo">KiteThere</div>
-      <div class="nav__link">home</div>
+      <div class="nav__link">
+        <nuxt-link to="/">home</nuxt-link>
+      </div>
       <div class="nav__link">about</div>
-      <div class="nav__link">map</div>
+      <div class="nav__link">
+        <nuxt-link to="/map">map</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -15,6 +19,10 @@
   height: 80px;
   display: grid;
   grid-template-columns: var(--layout);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
 }
 
 .nav__content {
@@ -32,5 +40,10 @@
 
 .nav__link {
   justify-self: right;
+}
+
+.nav__link > * {
+  color: rgb(36, 50, 67);
+  text-decoration: none;
 }
 </style>
