@@ -7,7 +7,6 @@ const nuxt = new Nuxt(config)
 
 // build nuxt
 if (config.dev) {
-    console.log('dev')
     const builder = new Builder(nuxt)
     builder.build().catch((error) => {
         console.log('failed to build nuxt')

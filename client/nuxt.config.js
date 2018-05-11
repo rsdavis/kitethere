@@ -2,7 +2,9 @@ module.exports = {
   mode: 'universal',
   srcDir: __dirname,
   dev: (process.env.NODE_ENV !== 'production'),
-
+  env: {
+    API_URL: process.env.API_URL
+  },
   /*
   ** Headers of the page
   */

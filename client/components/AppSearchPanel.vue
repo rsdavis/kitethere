@@ -1,6 +1,7 @@
 <template>
   <div class="panel">
-    <div class="panel__item" v-for="spot in filtered" :key="spot.id" :class="{'panel__item--selected': selection && spot.spotID === selection.spotID}">
+    <nuxt-link class="panel__link" v-for="spot in filtered" :key="spot.id" :to="'/spots/' + spot.spotID">
+    <div class="panel__item" :class="{'panel__item--selected': selection && spot.spotID === selection.spotID}">
       <div class="panel__item-left">
         <div class="panel__item-name">{{ spot.name }}</div>
         <div class="panel__item-description">{{ trim(spot.description) }}</div>
@@ -12,6 +13,8 @@
         <img :src="cloudify(spot.images[0].url)" />
       </div>
     </div>
+  </nuxt-link>
+
   </div>
 </template>
 
@@ -46,6 +49,10 @@ export default {
 
     trim (text) {
       return text.substring(0, 120) + '...'
+    },
+
+    spotPath (spotID) {
+      return '/spots/' + spotID
     }
   },
 
@@ -66,6 +73,10 @@ export default {
   display: grid;
   grid-gap: 5px;
   align-content: start;
+}
+
+.panel__link {
+  text-decoration: none;
 }
 
 .panel__item {
@@ -113,6 +124,7 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: rgb(36, 50, 67);
 }
 
 .panel__item--selected > .panel__item-name {

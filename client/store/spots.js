@@ -22,7 +22,8 @@ export const mutations = {
     data.forEach(item => {
       state.collection[item.spotID] = item
     })
-  }
+  },
+  setPromise (state, promise) { state.fetchPromise = promise }
 }
 
 export const actions = {
@@ -33,12 +34,12 @@ export const actions = {
   // clear the selection
   clear (context) { context.commit('setId', null) },
 
-  fetch (context) {
+  fetch (context, url) {
     if (context.state.fetchPromise) return context.state.fetchPromise
 
-    context.state.fetchPromise = new Promise((resolve, reject) => {
+    var fetchPromise = new Promise((resolve, reject) => {
       axios({
-        'url': 'https://www.kitethere.com/api/spots',
+        'url': url,
         'method': 'get'
       }).then(response => {
         context.commit('setCollection', response.data)
@@ -47,6 +48,8 @@ export const actions = {
         reject(error)
       })
     })
+
+    context.commit('setPromise', fetchPromise)
 
     return context.state.fetchPromise
   },

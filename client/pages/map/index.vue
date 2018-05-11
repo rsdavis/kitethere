@@ -16,8 +16,9 @@ import { mapMutations } from 'vuex'
 export default {
   components: { AppSearchMap, AppSearchPanel },
 
-  async fetch ({ store, params }) {
-    await store.dispatch('spots/fetch')
+  async fetch ({ store, params, env }) {
+    let url = env.API_URL + '/spots'
+    await store.dispatch('spots/fetch', url)
   }
 }
 </script>
