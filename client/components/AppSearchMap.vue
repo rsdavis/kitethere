@@ -1,7 +1,6 @@
 <template>
   <div class="search__map">
     <div id="gmap"></div>
-    <div class="search__popup" v-if="popupVisible">popup</div>
   </div>
 </template>
 
@@ -13,7 +12,6 @@ export default {
     return {
       map: null,
       markers: {},
-      popupVisible: false
     }
   },
 
@@ -111,13 +109,6 @@ export default {
   top: 80px;
 }
 
-.search__popup {
-  background-color: white;
-  z-index: 3;
-  position: fixed;
-  left: 20px;
-  top: 200px;
-}
 .gm-style-iw + div {display: none;}
 .gm-style-iw {text-align:center;}
 </style>

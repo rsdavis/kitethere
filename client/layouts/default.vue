@@ -19,7 +19,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  --layout: minmax(20px, 1fr) minmax(0, 1200px) minmax(20px, 1fr);
+  --dark-blue: rgb(36, 50, 67);
+  --gutter-width: 20px;
+  --content-width: 1200px;
+  --layout: minmax(var(--gutter-width), 1fr) minmax(0, var(--content-width)) minmax(var(--gutter-width), 1fr);
 }
 
 *, *:before, *:after {
