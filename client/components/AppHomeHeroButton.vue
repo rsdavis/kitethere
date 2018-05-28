@@ -17,11 +17,12 @@ export default {
 <style>
 .hero__button {
   border: 2px solid var(--dark-blue);
-  border-radius: 5px;
+  border-radius: 0px;
   text-decoration: none;
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-template-rows: 62px;
+  grid-template-rows: 60px;
+  box-sizing: border-box;
 }
 
 .hero__button-icon {

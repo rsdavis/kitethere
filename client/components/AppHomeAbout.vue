@@ -24,7 +24,7 @@
   padding: 100px 0 100px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-gap: 40px;
 }
 
 .about__img {
@@ -38,5 +38,26 @@
   font-size: 24px;
   align-content: start;
   text-align: right;
+}
+
+@media only screen and (min-width: 800px) {
+  .about__message { font-size: 18px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .about__message { font-size: 24px; }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  .about__content {
+    grid-template-columns: 1fr;
+  }
+  .about__message {
+    text-align: left;
+    font-size: 24px;
+
+  }
 }
 </style>

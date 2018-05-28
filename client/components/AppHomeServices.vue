@@ -5,7 +5,7 @@
       <div class="services__item">
         <div class="services__icon">
           <font-awesome-icon class="services__icon-bg" :icon="faSquare" size="10x"/>
-          <font-awesome-icon class="services__icon-fg" :icon="faMapMarkerAlt" size="5x"/>
+          <font-awesome-icon class="services__icon-fg" :icon="faGlobe" size="5x"/>
         </div>
         <div class="services__message">
           <h2>Find A Location</h2>
@@ -16,7 +16,7 @@
       <div class="services__item">
         <div class="services__icon">
           <font-awesome-icon class="services__icon-bg" :icon="faSquare" size="10x"/>
-          <font-awesome-icon class="services__icon-fg" :icon="faPlus" size="5x"/>
+          <font-awesome-icon class="services__icon-fg" :icon="faMapMarkerAlt" size="5x"/>
         </div>
         <div class="services__message">
           <h2>Add A Spot</h2>
@@ -54,7 +54,7 @@
 import {FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome'
 import faSquare from '@fortawesome/fontawesome-free-solid/faSquare'
 import faMapMarkerAlt from '@fortawesome/fontawesome-free-solid/faMapMarkerAlt'
-import faPlus from '@fortawesome/fontawesome-free-solid/faPlus'
+import faGlobe from '@fortawesome/fontawesome-free-solid/faGlobe'
 import faPencilAlt from '@fortawesome/fontawesome-free-solid/faPencilAlt'
 import faImage from '@fortawesome/fontawesome-free-solid/faImage'
 
@@ -63,7 +63,7 @@ export default {
   computed: {
     faSquare () { return faSquare },
     faMapMarkerAlt () { return faMapMarkerAlt },
-    faPlus () { return faPlus },
+    faGlobe () { return faGlobe },
     faPencilAlt () { return faPencilAlt },
     faImage () { return faImage }
   }
@@ -81,7 +81,7 @@ export default {
   padding: 100px 0 100px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 100px;
+  grid-gap: 20px;
 }
 
 .services__item {
@@ -111,5 +111,11 @@ export default {
 
 .services__message {
   color: rgb(36, 50, 67);
+}
+
+@media only screen and (max-width: 800px) {
+  .services__content {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

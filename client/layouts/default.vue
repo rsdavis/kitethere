@@ -22,6 +22,7 @@ html {
   --dark-blue: rgb(36, 50, 67);
   --gutter-width: 20px;
   --content-width: 1200px;
+  --breakpoint: 1000px;
   --layout: minmax(var(--gutter-width), 1fr) minmax(0, var(--content-width)) minmax(var(--gutter-width), 1fr);
 }
 

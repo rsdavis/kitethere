@@ -40,4 +40,10 @@
   color: rgb(36, 50, 67);
   text-decoration: none;
 }
+
+@media only screen and (max-width: 1000px) {
+  .nav__link {
+    display: none;
+  }
+}
 </style>
