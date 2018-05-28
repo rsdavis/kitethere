@@ -1,14 +1,10 @@
 <template>
   <div class="nav">
     <div class="nav__content">
-      <div class="nav__logo">KiteThere</div>
-      <div class="nav__link">
-        <nuxt-link to="/">home</nuxt-link>
-      </div>
+      <nuxt-link class="nav__logo" to="/">KiteThere</nuxt-link>
+      <nuxt-link class="nav__link" to="/">home</nuxt-link>
       <div class="nav__link">about</div>
-      <div class="nav__link">
-        <nuxt-link to="/map">map</nuxt-link>
-      </div>
+      <nuxt-link class="nav__link" to="/map">map</nuxt-link>
     </div>
   </div>
 </template>
@@ -33,6 +29,7 @@
 }
 
 .nav__logo {
+  text-decoration: none;
   font-size: 32px;
   font-weight: bold;
   color: rgb(30, 40, 50);
@@ -40,9 +37,6 @@
 
 .nav__link {
   justify-self: right;
-}
-
-.nav__link > * {
   color: rgb(36, 50, 67);
   text-decoration: none;
 }
