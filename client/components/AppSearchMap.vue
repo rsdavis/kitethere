@@ -1,7 +1,5 @@
 <template>
-  <div class="search__map">
     <div id="gmap"></div>
-  </div>
 </template>
 
 <script>
@@ -12,11 +10,14 @@ export default {
     return {
       map: null,
       markers: {},
+      mobile: false
     }
   },
 
   computed: {
-    collection () { return this.$store.getters['spots/collection'] }
+    selection () { return this.$store.getters['spots/selection'] },
+    collection () { return this.$store.getters['spots/collection'] },
+    squeezed () { return this.mobile && this.selection }
   },
 
   mounted () {
@@ -24,9 +25,27 @@ export default {
       this.initMap()
       this.addMarkers()
     })
+
+    var mediaQuery = window.matchMedia("(max-width: 1000px)")
+    mediaQuery.addListener((match) => {
+      if (match.matches) this.mobile = true
+      else this.mobile = false
+    })
+
+    this.switchSqueezed(this.squeezed)
+  },
+
+  watch: {
+    'squeezed' (squeezed) { this.switchSqueezed(squeezed) }
   },
 
   methods: {
+    switchSqueezed (squeezed) {
+      var element = document.getElementById("gmap")
+      if (squeezed) element.classList.add("gmap--squeezed")
+      else element.classList.remove("gmap--squeezed")
+    },
+
     initMap () {
       const options = {
         zoom: 2,
@@ -101,12 +120,7 @@ export default {
 <style>
 #gmap {
   width: 100%;
-  height: calc(100vh - 80px);
-}
-
-.search__map {
-  position: sticky;
-  top: 80px;
+  height: 100%;
 }
 
 .gm-style-iw + div {display: none;}
